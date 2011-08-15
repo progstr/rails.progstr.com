@@ -1,0 +1,430 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    background-color: #b84242;
+    font-size: .75em;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+a
+{
+    color: #353535;
+    text-decoration: underline;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.homeLink
+{
+    color: white;
+    text-decoration: none;
+}
+
+.homeLink:hover
+{
+    text-decoration: underline;
+}
+
+#sidebar
+{
+    clear: both;
+    
+    margin: 0px;
+    border: 0px;
+    
+    width: 16%;
+    padding: 2%;
+    float: left;
+    min-height: 700px;
+    background-color: #e8eef4;
+
+    border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#sidebar ul
+{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#main
+{
+    margin: 0px;
+    border: 0px;
+    
+    width: 75%;
+    padding: 2%;
+    min-height: 700px;
+    float: right;
+
+    background-color: #fff;
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+
+    border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.code
+{
+     min-width: 200px;
+}
+
+#overview
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 13px;
+}
+
+#overview li
+{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    width: 255px;
+    margin: 15px;
+    vertical-align: top;
+}
+
+#overview h3
+{
+    margin: 0;
+    padding: 0;
+}
+
+#overview p
+{
+    font-size: 11px;
+    margin: 0;
+    padding: 6px 0 0;
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input[type="text"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label,
+.display-field,
+.editor-field
+{
+    margin: 0.5em 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+/* Header styles matching the home page */
+#top_bg {
+    width: 100%;
+    margin: 0px 0px 34px 0px;
+    height: 118px;
+    background: transparent url('/images/menu_bg.png') repeat-x center center;
+}
+
+#top_bar {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    margin: auto;
+}
+
+.logo {
+    float: left;
+    margin: 29px 25px 8px 0;
+}
+
+.logo img {
+    border: 0px;
+}
+
+#menu_wrapper {
+    padding: 0;
+    height: 66px;
+}
+
+#menu_wrapper .nav ul, #menu_wrapper div .nav {
+    list-style: none;
+    display: block;
+    padding: 0 5px 0 0;
+    margin: 0 -7px 0 0;
+    float: right;
+    font-size: 13px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+#menu_wrapper .nav ul li, #menu_wrapper div .nav li {
+    display: block;
+    float: left;
+    margin: 0 0 0 0;
+}
+
+#menu_wrapper .nav ul li a, #menu_wrapper div .nav li a {
+    color: #555;
+    text-decoration: none;
+    line-height: 16px;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 13px;
+    font-st-topyle: normal;
+    font-variant: normal;
+    font-weight: bold;
+}
+
+#menu_wrapper .nav ul li a, #menu_wrapper div .nav li a {
+    display: block;
+    padding: 32px 20px 8px 20px;
+    height: 61px;
+    margin: 0;
+}
+
+#menu_wrapper .nav ul li a.hover, #menu_wrapper .nav ul li a:hover, #menu_wrapper div .nav li a.hover, #menu_wrapper div .nav li a:hover {
+    background: transparent url('/images/menu_hover.png') repeat-x top center;
+    color: #444;
+}
+
+#menu_wrapper .nav ul li a span, #menu_wrapper div .nav li a span {
+    display: block;
+    font-size: 11px;
+    color: #96A1A6;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+/*white text above top menu*/
+
+#toptextbox {
+    width: 90%;
+    height: 34px; 
+    margin: auto; 
+    color: white; 
+    font-size: 11px;
+}
+
+#toptextboxleft {
+	width: 380px; 
+    float: left; 
+    margin-top: 13px;
+}
+
+#toptextboxright {
+	width: 380px; 
+    float: right; 
+    text-align: right; 
+    margin-top: 13px;
+}
+
+#toptextboxright a {
+	margin-left:30px;
+    color:white;
+    text-decoration: none;
+}
+
+#toptextboxright a:hover {
+    text-decoration: underline;
+}
+
+#toptextboxright b {
+	color:white;
+}

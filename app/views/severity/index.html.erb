@@ -1,0 +1,46 @@
+<div style="width: 40%; float: left;">
+  <h2><!- ViewData["Message"] --></h2>
+  <%= form_tag :action => "log" do %>
+<p>Log message:</p>
+  <p><%= text_area_tag(:logMessage, "Something interesting just happened...", :style => "height:150px;width:300px;") %></p>
+  <p>Severity:</p>
+  <p>
+    <label><%= radio_button_tag(:severity, "Info", @severity == "Info") %>Info</label>
+    <label><%= radio_button_tag(:severity, "Warning", @severity == "Warning") %>Warning</label>
+    <label><%= radio_button_tag(:severity, "Error", @severity == "Error") %>Error</label>
+    <label><%= radio_button_tag(:severity, "Fatal", @severity == "Fatal") %>Fatal</label>
+  </p>
+  <p>
+    <input type="submit" value="Log" />
+    <a href="https://app.progstr.com/demoAutoLogin"
+                title="Log management area for our demo account."
+                target="_blank">View Logs</a>
+  </p>
+  <% end %>
+  </div>
+
+<div class="code" style="float: right; width: 59%;">
+Log code:
+<pre class="brush: ruby">
+def log
+  @severity = params[:severity]
+  @logMessage = params[:logMessage]
+
+  case @severity
+  when "Info"
+    @log.info @logMessage
+  when "Warning"
+    @log.warn @logMessage
+  when "Error"
+    @log.error @logMessage
+  when "Fatal"
+    @log.fatal @logMessage
+  else
+    @log.info @logMessage
+  end
+
+  render :index
+end
+</pre>
+</div>
+

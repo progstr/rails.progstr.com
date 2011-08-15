@@ -1,0 +1,2 @@
+module SeverityHelper
+end

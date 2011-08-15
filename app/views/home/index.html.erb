@@ -1,0 +1,38 @@
+<% content_for :title, "progstr &raquo; logger".html_safe %>
+<h2>Welcome to the <em>progstr &raquo; logger</em> web examples.</h2>
+<p>This web application demonstrates how to use the <em>progstr &raquo; logger</em> client library and send log messages to the server. 
+It contains both plain Ruby examples and ones that take advantage or the Ruby on Rails framework &mdash; click the links to visit a specific example.</p>
+<p>In addition the application shows techniques for intercepting interesting events and errors in a typical web application and logging them. That is invaluable for any production deployment - especially when 
+troubleshooting problems.
+</p>
+<div id="overview-container">
+  <h2 style="margin: 20px 0px 0px 0px">Feature Overview</h2>
+  <ul id="overview" class="theme-agnostic-lead">
+    <li>
+    <h3>Familiar Log API Interface</h3>
+    <p>Ever used a the built-in &quot;logger&quot; library before? You'll feel at home with a familiar programming model.</p>
+    <p>You create a Progstr::Logger object in your code and generate events with one of four different <a href="/severity/index">severity levels</a>.</p>
+    </li>
+    <li>
+    <h3>Capture all Rails-generated events</h3>
+    <p>Adding a single line of code to your Rails environment configuration will redirect all logs to the <em>progstr &raquo; logger</em> service. No coding required.</p>
+    </li>
+    <li>
+    <h3>Catch and report uncaught errors</h3>
+    <p>Have those <em>error</em> and <em>fatal</em> originating from your application delivered in your email inbox by setting up an alert in the <em>Progstr</em> control panel. </p>
+    </li>
+    <li>
+    <h3>Deeply integrated with Rails</h3>
+    <p>Aside from handling all events and errors originating from Rails, you get events originating from your DB (ActiveRecord) or the controller execution lifecycle (ActionController) cleanly separated from the rest.</p>
+    </li>
+    <li>
+    <h3>Log everything</h3>
+    <p>Use the <strong>Rails.logger</strong> global object anywhere to log your events.</p>
+    <p>Log specific controller actions or audit delayed jobs execution. The <a href="/controller/actions">Controller actions</a> and <a href="/jobs/index">Delayed jobs</a> example demonstrate the techniques.</p>
+    </li><li>
+    <h3>Built for the cloud</h3>
+    <p>No local log files and no local data whatsoever.</p>
+    <p>Tightly integrated with <a href="http://heroku.com">Heroku</a>. Add it to your cloud application with a couple of clicks using our Heroku add-on.</p>
+    </li>
+  </ul>
+</div>

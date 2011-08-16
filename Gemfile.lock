@@ -41,6 +41,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (1.0.3)
+    pg (0.11.0)
     polyglot (0.3.2)
     progstr-ruby (1.0.0)
       json
@@ -77,6 +78,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pg
   progstr-ruby
   rails (= 3.0.9)
   sqlite3

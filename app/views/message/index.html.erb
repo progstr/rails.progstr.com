@@ -1,0 +1,42 @@
+<div style="width: 40%; float: left;">
+  <h2><%= @message %></h2>
+  <%= form_tag :action => "save" do %>
+
+  <p>Product</p>
+  <p><%= text_field_tag(:product, @product) %></p>
+  <p>Comment:</p>
+  <p><%= text_area_tag(:comment, @comment, :style => "height:150px;width:300px;") %></p>
+  <p>Log message generation:</p>
+  <%= select_tag(:generation, options_for_select(["Always", "Conditional"])) %>
+  <p>
+    <input type="submit" value="Save" />
+    <a href="https://app.progstr.com/demoAutoLogin"
+                title="Log management area for our demo account."
+                target="_blank">View Logs</a>
+  </p>
+  <% end %>
+</div>
+
+<div class="code" style="float: right; width: 59%;">
+Log code:
+<pre class="brush: ruby">
+def save
+  @product = params[:product]
+  @comment = params[:comment]
+  @generation = params[:generation]
+
+  if @generation == "Always" then
+    @log.info("[Always] New comment for product '#{@product}' - '#{@comment}'")
+  else
+    @log.info { "[Conditional] New comment for product '#{@product}' - '#{@comment}'" }
+  end
+
+  @message = "Log sent to server."
+  render :index
+end
+</pre>
+</div>
+<div style="clear: both"></div>
+<p>Sometimes log messages are expensive to generate and there are cases when you might want to avoid generating them completely. Say you have configured your logger to log <em>error</em> and <em>fatal</em> events only. In that case you would like to avoid assembling <em>info</em> and <em>warning</em> messages.</p>
+<p>The solution is to return the message from a Ruby block as we do in our "Conditional" case. The block will be evaluated only when <em>info</em> level logging has been turned on.</p>
+

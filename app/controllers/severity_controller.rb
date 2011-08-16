@@ -25,6 +25,7 @@ class SeverityController < ApplicationController
       @log.info @logMessage
     end
 
+    @message = "Log sent to server."
     render :index
   end
 end

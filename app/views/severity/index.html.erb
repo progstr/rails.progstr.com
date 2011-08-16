@@ -1,5 +1,5 @@
 <div style="width: 40%; float: left;">
-  <h2><!- ViewData["Message"] --></h2>
+  <h2><%= @message %></h2>
   <%= form_tag :action => "log" do %>
 <p>Log message:</p>
   <p><%= text_area_tag(:logMessage, "Something interesting just happened...", :style => "height:150px;width:300px;") %></p>

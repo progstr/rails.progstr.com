@@ -10,19 +10,19 @@ class SeverityController < ApplicationController
 
   def log
     @severity = params[:severity]
-    @logMessage = params[:logMessage]
+    logMessage = params[:logMessage]
 
     case @severity
     when "Info"
-      @log.info @logMessage
+      @log.info logMessage
     when "Warning"
-      @log.warn @logMessage
+      @log.warn logMessage
     when "Error"
-      @log.error @logMessage
+      @log.error logMessage
     when "Fatal"
-      @log.fatal @logMessage
+      @log.fatal logMessage
     else
-      @log.info @logMessage
+      @log.info logMessage
     end
 
     @message = "Log sent to server."

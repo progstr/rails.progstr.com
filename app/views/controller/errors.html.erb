@@ -1,0 +1,29 @@
+<% content_for :title, " - Controller errors".html_safe %>
+<h2><%= @message %></h2>
+<%= form_tag :action => "throw" do %>
+<p>Trigger a test error:</p>
+<p>
+  <input type="submit" value="Throw!" />
+  <a href="https://app.progstr.com/demoAutoLogin"
+    title="Log management area for our demo account."
+    target="_blank">View Logs</a>
+</p>
+<% end %>
+
+<p>You can catch and log specific exceptions raised by controller actions by registering handlers using the <em>rescue_from</em> methods:</p>
+<pre class="brush: ruby">
+rescue_from UserNotFoundError, :with => :user_not_found
+
+def throw
+  #Triggers a UserNotFound error
+  @user = User.find(42)
+end
+
+def user_not_found(exception)
+  @log.warn { "User not found\n#{exception.backtrace.join("\n\t")}" }
+
+  @message = "Exception logged."
+  render :errors
+end
+</pre>
+

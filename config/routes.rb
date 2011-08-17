@@ -1,4 +1,7 @@
 RailsProgstrCom::Application.routes.draw do
+  get "controller/errors"
+  post "controller/throw"
+
   get "message/index"
   post "message/save"
 

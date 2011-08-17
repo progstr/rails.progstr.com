@@ -1,0 +1,2 @@
+module RailsLoggerHelper
+end

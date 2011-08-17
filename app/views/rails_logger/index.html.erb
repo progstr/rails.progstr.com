@@ -1,0 +1,52 @@
+<% content_for :title, " - Rails logger and severity levels".html_safe %>
+<div style="width: 40%; float: left;">
+  <h2><%= @message %></h2>
+  <%= form_tag :action => "log" do %>
+<p>Log message:</p>
+  <p><%= text_area_tag(:logMessage, "Something interesting just happened...", :style => "height:150px;width:300px;") %></p>
+  <p>Severity:</p>
+  <p>
+    <label><%= radio_button_tag(:severity, "Info", @severity == "Info") %>Info</label>
+    <label><%= radio_button_tag(:severity, "Warning", @severity == "Warning") %>Warning</label>
+    <label><%= radio_button_tag(:severity, "Error", @severity == "Error") %>Error</label>
+    <label><%= radio_button_tag(:severity, "Fatal", @severity == "Fatal") %>Fatal</label>
+  </p>
+  <p>
+    <input type="submit" value="Log" />
+    <a href="https://app.progstr.com/demoAutoLogin"
+                title="Log management area for our demo account."
+                target="_blank">View Logs</a>
+  </p>
+  <% end %>
+  </div>
+
+<div class="code" style="float: right; width: 59%;">
+Log code:
+<pre class="brush: ruby">
+def log
+  @severity = params[:severity]
+  logMessage = params[:logMessage]
+
+  case @severity
+  when "Info"
+    Rails.logger.info("rails.severity") { logMessage }
+  when "Warning"
+    Rails.logger.warn("rails.severity") { logMessage }
+  when "Error"
+    Rails.logger.error("rails.severity") { logMessage }
+  when "Fatal"
+    Rails.logger.fatal("rails.severity") { logMessage }
+  else
+    Rails.logger.info("rails.severity") { logMessage }
+  end
+
+  @message = "Log sent to server."
+  render :index
+end
+</pre>
+</div>
+
+<div style="clear: both"></div>
+<p>This example is similar to the severity levels one, but it adds a small twist. Instead of creating a new logger for our controller, we just use the <em>Rails.logger</em> object. This makes it ridiculously easy to log a message from any class in a Rails application.</p>
+<p>Note that we are calling the <em>Logger</em> log methods by passing a <em>progname</em> parameter with a custom <u>"rails.severity"</u> value in order to use a different event source (instead of the default "Rails" one), so that we can easily find them later.</p>
+

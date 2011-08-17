@@ -1,4 +1,6 @@
 RailsProgstrCom::Application.routes.draw do
+  get "rails_logger/index"
+
   get "controller/errors"
   post "controller/throw"
 
@@ -10,6 +12,9 @@ RailsProgstrCom::Application.routes.draw do
 
   get "severity/index"
   post "severity/log"
+
+  get "rails_logger/index"
+  post "rails_logger/log"
 
   root :to => "home#index"
 

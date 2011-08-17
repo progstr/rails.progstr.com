@@ -1,0 +1,34 @@
+<% content_for :title, " - Logging controller actions".html_safe %>
+
+<%= form_tag :action => "deposit" do %>
+<h2><%= @message %></h2>
+<p>
+  Trigger a new controller action: <input type="submit" value="Deposit some money!" />
+  <a href="https://app.progstr.com/demoAutoLogin"
+    title="Log management area for our demo account."
+    target="_blank">View Logs</a>
+</p>
+<% end %>
+<p>Important controllers such as the ones handling payments or important user actions might benefit from 
+  logging the actions that got executed separately. We can do that by defining methods to be executed before and after controller actions using the <em>before_filter</em> and <em>after_filter</em> methods respectively.
+</p>
+
+<pre class="brush: ruby">
+before_filter :before_action
+after_filter :after_action
+
+def deposit
+  @log.info { "Deposit some money." }
+
+  render :index
+end
+
+def before_action
+  @log.info { "Executing action '#{params[:action]}' of controller '#{params[:controller]}'" }
+end
+
+def after_action
+  @log.info { "Executed action '#{params[:action]}' of controller '#{params[:controller]}'" }
+end
+</pre>
+

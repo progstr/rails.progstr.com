@@ -2,6 +2,9 @@ RailsProgstrCom::Application.routes.draw do
   get "controller/errors"
   post "controller/throw"
 
+  get "actions/index"
+  post "actions/deposit"
+
   get "message/index"
   post "message/save"
 

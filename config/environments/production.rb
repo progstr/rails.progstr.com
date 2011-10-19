@@ -48,5 +48,5 @@ RailsProgstrCom::Application.configure do
   config.active_support.deprecation = :notify
 
   Progstr.api_key = "DEMO"
-  # Progstr::RailsLogger.start config
+  Progstr::RailsLogger.start config
 end
